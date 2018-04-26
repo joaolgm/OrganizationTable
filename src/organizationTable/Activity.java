@@ -1,8 +1,6 @@
 package organizationTable;
 
-import java.util.Comparator;
-
-public class Activity implements Comparator {
+public class Activity implements Comparable {
 	
 	String name;
 	int duration, priority;
@@ -62,10 +60,19 @@ public class Activity implements Comparator {
 				return 0;
 		}
 	}
+	
+	public int compareTo(int another) {
+		if (this.duration < another)
+			return -1;
+		if (this.duration > another)
+			return 1;
+		
+		return 0;
+	}
 
 	@Override
-	public int compare(Object o1, Object o2) {
-		// TODO Auto-generated method stub
+	public int compareTo(Object o) {
+	
 		return 0;
 	}
 

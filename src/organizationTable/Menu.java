@@ -33,6 +33,7 @@ public class Menu {
 			case "P":
 				printSubMenu();
 				option2 = sc.nextLine().toUpperCase();
+				
 				switch (option2) {
 				case "P":
 					table.printTable(table.orderPriority());
@@ -49,14 +50,14 @@ public class Menu {
 	
 	
 	private void printMenu() {
-		System.out.println("(A)dd Activity"
+		System.out.println(" (A)dd Activity"
 				+ "\n (P)rint by Order"
 				+ "\n (E)xit");
 		System.out.println("Option> ");
 	}
 	
 	private void printSubMenu() {
-		System.out.println("(P)riority"
+		System.out.println(" (P)riority"
 				+ "\n (D)uration");
 		System.out.println("Option> ");
 	}

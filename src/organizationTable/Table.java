@@ -2,10 +2,11 @@ package organizationTable;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class Table {
+public class Table implements Comparable{
 	
-	ArrayList<Activity> table = new ArrayList<Activity>();
+	List<Activity> table = new ArrayList<Activity>();
 	
 	public Table() {
 	}
@@ -15,17 +16,17 @@ public class Table {
 		table.add(ex);
 	}
 	
-	/*public ArrayList<Activity> orderPriority() {
-		Collections.sort(table, (a,b) -> a.comparePriority(a, b));
+	public ArrayList<Activity> orderPriority() {
+		Collections.sort(table);
 		
-		return table;
+		return (ArrayList<Activity>) table;
 	}
 	
 	public ArrayList<Activity> orderDuration() {
-		Collections.sort(table, (a,b) -> a.compareDuration(a, b));
+		Collections.sort(table);
 		
-		return table;
-	}*/
+		return (ArrayList<Activity>) table;
+	}
 
 	public int sizeTable() {
 		return table.size();
@@ -35,7 +36,14 @@ public class Table {
 		for (Activity activity : table) {
 			System.out.println("Activity: " + activity.getName() + 
 					"\nDuration: " + activity.getDuration() +
-					"\nPriority: " + activity.getPriority());
+					"\nPriority: " + activity.getPriority() + 
+					System.lineSeparator());
 		}
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
